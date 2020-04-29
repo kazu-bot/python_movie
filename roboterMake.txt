@@ -1,0 +1,38 @@
+# romoterアプリ
+
+## main,roboterを作成
+<ol><li>Start</li>
+"こんにちは！私はRobokoです。あなたの名前はなんですか？"
+<li>NameInput</li>
+自分の名前
+<li>Recommend</li>
+[restaurant.csv]の存在有無を確認し、存在があればオススメを表示。<br>
+無ければ次ロジックに遷移<br>
+オススメ表示：countが一番多いrestaurantを表示し、好きかどうかを問う。
+
+csvファイルに2行以上存在かつNoが入力されれば次にcountが多いrestaurantを表示する。
+
+
+|res|logic|
+|---|---|
+|Yes|RestaurantSave|
+|No|RestaurantInput|
+
+<li>RestaurantInput</li>
+入力した名前"さん。どこのレストランが好きですか？"
+レストランの名前を入力させる。<br>
+この時、アッパーキャメルに変換する。
+
+<li>RestaurantSave</li>
+既にCSVファイルが存在すればそのCSVファイルに表1の形で保存
+[restaurant.csv]
+
+|restaurant|count|
+|---|---|
+|Japanese Apple   |1   |
+
+<li>End</li>
+締めのメッセージを表示
+自分の名前"さん。ありがとうございました。<br>
+良い一日を！さようなら。"
+</ol>
