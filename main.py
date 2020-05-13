@@ -1,6 +1,7 @@
 import roboter
 import os
 
+
 class main:
     def start_massage(self):
         print('こんにちは！私はRobokoです。あなたの名前はなんですか？')
@@ -11,7 +12,7 @@ class main:
         return name
 
     def end_message(name):
-        print(name+'さん。ありがとうございました。¥n良い一日を！さようなら。')
+        print(name + 'さん。ありがとうございました。¥n良い一日を！さようなら。')
 
     person_name = start_massage()
     endFlag = False
