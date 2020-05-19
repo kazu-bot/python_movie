@@ -11,9 +11,9 @@ setup(
     # You could use find_packages if setuptools is installed. 
     # packages=find_packages(),
     package_data={ 'roboter': ['templates/*.txt'] },
-    url='http://sakaijunsoccer.appspot.com',
+    url='dummy',
     license='MIT',
-    author='jsakai',
+    author='kazu',
     author_email='example@example.com',
     # You can specify install_requires if setuptools is installed
     # install_requires=['termcolor==1.1.0'],

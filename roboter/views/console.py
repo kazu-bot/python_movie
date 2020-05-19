@@ -6,10 +6,10 @@ import termcolor
 
 
 def get_template_dir_path():
-    """Return the path of the template's directory.
+    """Return the path of the templates's directory.
 
     Returns:
-        str: The template dir path.
+        str: The templates dir path.
     """
     template_dir_path = None
     try:
@@ -31,10 +31,10 @@ class NoTemplateError(Exception):
 
 
 def find_template(temp_file):
-    """Find for template file in the given location.
+    """Find for templates file in the given location.
 
     Returns:
-        str: The template file path
+        str: The templates file path
 
     Raises:
         NoTemplateError: If the file does not exists.
@@ -47,10 +47,10 @@ def find_template(temp_file):
 
 
 def get_template(template_file_path, color=None):
-    """Return the path of the template.
+    """Return the path of the templates.
 
     Args:
-        template_file_path (str): The template file path
+        template_file_path (str): The templates file path
         color: (str): Color formatting for output in terminal
             See in more details: https://pypi.python.org/pypi/termcolor
 
