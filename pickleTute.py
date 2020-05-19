@@ -7,7 +7,7 @@ import pickle
 class T(object):
     def __init__(self,name):
         self.name = name
-
+,、k
 data = {
     'a':[1,2,3],
     'b':('test','test2'),
