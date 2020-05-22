@@ -65,7 +65,7 @@ class RankingModel(CsvModel):
 
     def save(self):
         """Save data to csv file."""
-        # TODO (kazu) Use locking mechanism for avoiding dead lock issue
+        # TODO (kazu) Use locking mechanism for avoiding dead multi issue
         with open(self.csv_file, 'w+') as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=self.column)
             writer.writeheader()

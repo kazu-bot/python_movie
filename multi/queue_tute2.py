@@ -19,6 +19,9 @@ def worker1(queue):
         if item is None:
             break
         logging.debug(item)
+        queue.task_done()
+
+    logging.debug('logggggggggggg')
     logging.debug('end worker1')
 
 
@@ -32,9 +35,23 @@ def worker2(queue):
 
 if __name__ == '__main__':
     queue = queue.Queue()
-    for i in range(10):
+    #タスク大量実行
+    for i in range(1000):
         queue.put(i)
-    t1 = threading.Thread(target=worker1, args=(queue,))
-    t1.start()
+    ts = []
+    for _ in range(3):
+        t=threading.Thread(target=worker1, args=(queue,))
+        t.start()
+        ts.append(t)
+
     # quwueにmainでNoneを詰める
-    queue.put(None)
+    logging.debug('tasks are not done')
+    queue.join()
+
+    #worker1の処理が長かったりした場合、worker1側に「queue.task_done()」を入れてやることで
+    #処理の終了を待たずして並列処理が可能
+    logging.debug('tasks are done')
+
+    #作成したスレッド分Noneを入れてやる
+    for _ in range(len(ts)):
+        queue.put(None)
